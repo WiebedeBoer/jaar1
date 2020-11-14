@@ -1,0 +1,23 @@
+﻿@{
+    var usertypeses = Session["type"];
+    string usertype = Convert.ToString(usertypeses);
+    string error = "";
+    if (usertype == "user")
+    {
+
+
+        <a href="account.cshtml?type=user">account</a>  <a href="lijstje.cshtml">bestellijstje</a> <a href="logout.cshtml">logout</a>
+        error = "ok";
+    }
+    else if (usertype == "bride")
+    {
+        <a href="account.cshtml?type=bride">account</a>  <a href="overzicht.cshtml">bestellijstje</a> <a href="logout.cshtml">logout</a>
+        error = "ok";
+    }
+    else
+    {
+        error = "Onjuist gebruikerstype";
+    }
+
+}
+

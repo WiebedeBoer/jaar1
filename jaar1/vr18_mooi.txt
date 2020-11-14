@@ -1,0 +1,31 @@
+#include <Servo.h> // header file voor de servo-component
+Servo servo1; // new servo
+
+int sennsorval =0;
+const int servoPin = 9; //pwm-pin
+const int analogPin = 0;
+
+
+void setup() {
+  Serial.begin(9600);
+  // put your setup code here, to run once:
+ servo1.attach(servoPin);
+ //servo1.write(sennsorval);
+ 
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+ 
+  int sensorval = analogRead(analogPin);
+  Serial.print("sensorval: ");
+   Serial.println(sensorval);
+  int val = map(sensorval, 0, 1023, 0, 179);
+  Serial.print("Val: ");
+  Serial.println(val);
+  
+
+  // Smooth move to angle
+  servo1.write(val);
+  delay(100);
+}

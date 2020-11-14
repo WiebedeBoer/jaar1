@@ -1,0 +1,14 @@
+start
+Rengerslaan 10 , Leeuwarden
+
+eind
+Rijksveerdam, Holwerd
+
+route 1
+https://routeplanner.fietsersbond.nl/#route?locations=11244842,l380762&speed=18&routetype=64&preferences=63
+
+route 2
+https://routeplanner.fietsersbond.nl/#route?locations=11244842,l1895032_180542_585868,l405747_181501_591574,l380762&speed=18&routetype=64&preferences=63
+
+route 3
+https://routeplanner.fietsersbond.nl/#route?locations=11244842,l386903_184046_582438,l486448_184816_584095,l165854_184724_585240,l166590_185403_588010,l380762&speed=18&routetype=64&preferences=63

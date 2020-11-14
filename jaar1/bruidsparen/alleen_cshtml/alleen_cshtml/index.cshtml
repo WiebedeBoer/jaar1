@@ -1,0 +1,33 @@
+﻿<!DOCTYPE HTML>
+<html>
+@RenderPage("head.cshtml")
+<body>
+    <header>
+        Welkom bij hebberige bruidsparen.
+    </header>
+    <main>
+        <div class="rij">
+            <div class="login">
+                <h2>Login</h2>
+                <form action="login.cshtml" method="post" class="form-control-plaintext">
+                    <br>E-mail: <input type="text" name="email" class="form-control" placeholder="youremail@gmail.com">
+                    <br>Wachtwoord: <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <br><input type="submit" value="login" class="btn">
+                </form>
+            </div>
+            <div class="register">
+                <h2>Registreer</h2>
+                <form action="register.cshtml" method="post">
+                    <br>Gebruikerstype: <select name="user"><option value="user">gewone gebruiker</option><option value="bride">bruidspaar</option></select>
+                    <br>E-mail: <input type="text" name="email" class="form-control" placeholder="youremail@gmail.com">
+                    <br>Wachtwoord: <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <br><input type="submit" value="registreer" class="btn">
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        hebberige bruidsparen &COPY; Wiebe de Boer (boer1547, 462918)
+    </footer>
+</body>
+</html>

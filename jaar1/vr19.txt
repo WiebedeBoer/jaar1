@@ -1,0 +1,19 @@
+const int trigPin = 6;
+const int echoPin = 7;
+long duration;
+int distance;
+
+void setup()
+{
+pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
+pinMode(echoPin, INPUT); // Sets the echoPin as an Input
+digitalWrite(trigPin, LOW);
+}
+
+void loop()
+{
+digitalWrite(trigPin, HIGH); // output puls
+delayMicroseconds(10);
+digitalWrite(trigPin, LOW);
+duration = pulseIn(echoPin, HIGH, 100000UL);
+}

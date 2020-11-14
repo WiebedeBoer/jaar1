@@ -1,0 +1,115 @@
+﻿@using WebMatrix.Data;
+@{
+    //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Todo.mdf;Integrated Security=True";
+    //string provider = "System.Data.SqlClient";
+    //Database db = Database.OpenConnectionString(connectionString, provider);
+
+    Database db = Database.Open("TodoDbCntStrng");
+
+    string error = "";
+
+    //var usertype = Session["type"];
+    //int userID = Convert.ToInt32(Session["id"]);
+    //int userID = 2;
+
+    int userID = -1;
+    if (Session["id"] != null)
+    {
+        userID = Convert.ToInt32(Session["id"]);
+    }
+
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    @RenderPage("head.cshtml")
+</head>
+<body>
+    <header>
+        @RenderPage("menu.cshtml")
+    </header>
+    <main>
+
+        @{
+            string Actiontype = "";
+            Actiontype = Request.QueryString["type"];
+            if (Actiontype == "maak")
+            {
+                if (IsPost)
+                {
+                    int prioriteit = Convert.ToInt16(Request.Form["prioriteit"]);
+                    string naam = Request.Form["naam"];
+                    int defid = 0;
+                    var insertCommand = "INSERT INTO wishlist (naam, priority, UserId, besteller) VALUES(@0, @1, @2, @3)";
+                    db.Execute(insertCommand, naam, prioriteit, userID, defid);
+
+                    <p>item op lijst gezet</p>
+                }
+
+
+
+            }
+            else if (Actiontype == "verwijder")
+            {
+
+                if (IsPost)
+                {
+
+                    int rij = Convert.ToInt32(Request.Form["rij"]);
+
+                    var coCommand = "SELECT COUNT(Id) FROM wishlist WHERE Id =@0 AND UserId =@1";
+                    var countrij = db.Query(coCommand, rij, userID);
+
+                    if (countrij != null)
+                    {
+                        var delCommand = "DELETE FROM wishlist WHERE Id=@0";
+                        db.Execute(delCommand, rij);
+                        <p>item verwijderd</p>
+                    }
+                    else
+                    {
+                        <p class="error">item bestaat niet</p>
+                    }
+                }
+
+
+
+
+            }
+            else if (Actiontype == "prioriteit")
+            {
+
+                if (IsPost)
+                {
+                    int rij = Convert.ToInt32(Request.Form["rij"]);
+
+                    //var countrij = db.Query("SELECT COUNT(Id) FROM wishlist WHERE Id ='{rij}' AND UserId = '{userID}'");
+                    var coCommand = "SELECT COUNT(Id) FROM wishlist WHERE Id =@0 AND UserId =@1";
+                    var countrij = db.Query(coCommand, rij, userID);
+
+                    if (countrij != null)
+                    {
+                        //int rij = Convert.ToInt16(Request.Form["rij"]);
+                        int prioriteit = Convert.ToInt32(Request.Form["prioriteit"]);
+                        var updateCommand = "UPDATE wishlist SET priority=@0 WHERE Id=@1";
+                        db.Execute(updateCommand, prioriteit, rij);
+                        <p>prioriteit gewijzigd</p>
+
+                    }
+                    else
+                    {
+                        <p class="error">item bestaat niet</p>
+                    }
+                }
+
+            }
+
+        }
+
+
+    </main>
+    <footer>
+        hebberige bruidsparen &COPY; Wiebe de Boer (boer1547, 462918)
+    </footer>
+</body>
+</html>

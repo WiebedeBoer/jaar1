@@ -1,0 +1,88 @@
+﻿@using WebMatrix.Data;
+@{
+    //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Todo.mdf;Integrated Security=True";
+    //string provider = "System.Data.SqlClient";
+    //Database db = Database.OpenConnectionString(connectionString, provider);
+
+    Database db = Database.Open("TodoDbCntStrng");
+
+    string error = "";
+
+    //var usertype = Session["type"];
+    //int userID = Convert.ToInt32(Session["id"]);
+    //int userID = 2;
+
+    int userID = -1;
+    if (Session["id"] != null)
+    {
+        userID = Convert.ToInt32(Session["id"]);
+    }
+
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    @RenderPage("head.cshtml")
+</head>
+<body>
+    <header>
+        @RenderPage("menu.cshtml")
+    </header>
+    <main>
+
+        @{
+            //var brideID = db.Query("SELECT brideId FROM userlist WHERE Id ='{userID}'");
+            var brideCoCommand = "SELECT brideId FROM userlist WHERE Id =@0";
+            var Bruidspaar = db.QueryValue(brideCoCommand, userID);
+            int brideID = Convert.ToInt32(Bruidspaar);
+
+            var brideCommand = "SELECT COUNT(Id) FROM wishlist WHERE UserId=@0";
+            var telspul = db.QueryValue(brideCommand, userID);
+
+            if (telspul >= 1)
+            {
+
+                //var spul = db.Query("SELECT Id, Name FROM wishlist WHERE UserId ='{brideID}' ORDER BY Priority ASC, Id DESC");
+
+                var spulCommand = "SELECT Id, naam, priority, besteller FROM wishlist WHERE UserId =@0 AND (besteller =@1 OR besteller =0) ORDER BY priority ASC, Id DESC";
+                var spul = db.Query(spulCommand, brideID, userID);
+
+
+                <table>
+                    <tr><th>Item</th><th>Volgorde</th><th>Bestellen</th><th>Bestelstatus</th></tr>
+                    @foreach (var recrod in spul)
+                    {
+
+                        <tr>
+                            <td>@recrod.naam</td>
+                            <td>@recrod.priority</td>
+
+
+                            @{
+                                if (@recrod.besteller != null && @recrod.besteller != 0)
+                                {
+                                    int bestelId = Convert.ToInt32(recrod.besteller);
+                                    var bestellerCom = "SELECT email FROM userlist WHERE Id =@0";
+                                    var bestellermail = db.QuerySingle(bestellerCom, bestelId);
+
+                                    <td>@bestellermail.email</td>
+                                    <td>al besteld</td>
+                                }
+                                else
+                                {
+                                    <td><form method="post" action="bestel.cshtml?type=bestel"><input type="hidden" name="actie" value="bestel" /><input type="hidden" value="@recrod.Id" name="rij" /><input type="submit" value="bestel" /></form></td>
+                                    <td>nog niet besteld</td>
+                                }
+                            }
+                        </tr>
+                     }
+                </table>
+            }
+
+        }
+    </main>
+    <footer>
+        hebberige bruidsparen &COPY; Wiebe de Boer (boer1547, 462918)
+    </footer>
+</body>
+</html>

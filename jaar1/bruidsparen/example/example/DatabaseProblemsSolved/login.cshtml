@@ -1,0 +1,74 @@
+﻿@using WebMatrix.Data;
+@{
+    //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Todo.mdf;Integrated Security=True";
+    //string provider = "System.Data.SqlClient";
+    //Database db = Database.OpenConnectionString(connectionString, provider);
+    Database db = Database.Open("TodoDbCntStrng");
+
+    string error = "";
+    if (IsPost)
+    {
+        string email = Request.Form["email"];
+        string password = Request.Form["password"];
+        var loginUser = db.QueryValue($"SELECT COUNT(email), COUNT(password) FROM userlist WHERE email='{email}' AND password='{password}'");
+        var loginBride = db.QueryValue($"SELECT COUNT(email), COUNT(password) FROM bridelist WHERE email='{email}' AND password='{password}'");
+
+        if (loginUser == 1 || loginBride == 1)
+        {
+            Session["login"] = "ok";
+            Session["email"] = email;
+            Session["type"] = "";
+            //Session["id"] = 0;
+            if (loginUser == 1)
+            {
+                //int userID = Convert.ToInt32(db.QueryValue("SELECT Id FROM userlist WHERE email='{email}' AND password='{password}'"));
+                var userID = db.QueryValue("SELECT Id FROM userlist WHERE email=@0 AND password=@1", email, password);
+
+                Session["id"] = userID;
+                //Session["id"] = 1;
+                Session["type"] = "user";
+                Response.Redirect($"account.cshtml?type=user");
+            }
+            else if (loginBride == 1)
+            {
+                //int userID = Convert.ToInt32(db.QueryValue("SELECT Id FROM bridelist WHERE email='{email}' AND password='{password}'"));
+                //var userID = db.QueryValue("SELECT Id FROM bridelist WHERE email='{email}' AND password='{password}'");
+                var userID = db.QueryValue("SELECT Id FROM bridelist WHERE email=@0 AND password=@1", email, password);
+                Session["id"] = userID;
+                //Session["id"] = 1;
+                Session["type"] = "bride";
+                //Response.Redirect("account.cshtml?type=bride");
+            }
+            error = "none";
+        }
+        else
+        {
+            error = "Onjuiste gegevens ingevuld";
+        }
+
+        int check = Convert.ToInt32(Session["id"]);
+    }
+}
+<!DOCTYPE HTML>
+<html>
+@RenderPage("head.cshtml")
+<body>
+    <header> </header>
+    <main>
+@{ 
+    if (error != "none")
+    {
+        <p>onjuiste gegevens ingevuld </p>
+    }
+    else
+    {
+        <p> <a href="account.cshtml?type=bride">to account</a></p>
+    }
+}
+    </main>
+    <footer>
+        hebberige bruidsparen &COPY; Wiebe de Boer (boer1547, 462918)
+    </footer>
+</body>
+</html>
+

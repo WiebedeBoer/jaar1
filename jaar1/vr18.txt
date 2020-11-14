@@ -1,0 +1,19 @@
+#include <servo.h> // header file voor de servo-component
+Servo servo1; // new servo
+servo1.attach(9); // servo on pin 9
+
+const int servoPin = 5; //pwm-pin
+const int analogPin = 0;
+
+Servo servol;
+
+void setup() {
+  // put your setup code here, to run once:
+ servol.attach(servoPin);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+int val = map(sensorval, 0, 1023, 0, 179);
+servol.write(val);
+}

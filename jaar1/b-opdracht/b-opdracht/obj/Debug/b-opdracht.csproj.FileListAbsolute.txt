@@ -1,0 +1,86 @@
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\bin\Debug\b-opdracht.dll
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\bin\Debug\b-opdracht.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\bin\Debug\b_opdracht.b_opdracht.apk
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\bin\Debug\b_opdracht.b_opdracht-Signed.apk
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\b-opdracht.csprojResolveAssemblyReference.cache
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\b-opdracht.csproj.CoreCompileInputs.cache
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\b-opdracht.dll
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\b-opdracht.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\android\bin\b_opdracht.b_opdracht.apk
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\res\layout\main.xml
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\res\values\strings.xml
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\R.cs.flag
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\uploadflags.txt
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\bin\Debug\Mono.Android.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\bin\Debug\mscorlib.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\bin\Debug\System.Core.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\bin\Debug\System.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\bin\Debug\System.Xml.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\bin\Debug\System.Net.Http.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\bin\Debug\System.Runtime.Serialization.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\bin\Debug\System.ServiceModel.Internals.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\bin\Debug\Mono.Security.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\bin\Debug\System.ComponentModel.Composition.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\linksrc\Mono.Android.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\linksrc\mscorlib.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\linksrc\System.Core.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\linksrc\System.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\linksrc\System.Xml.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\linksrc\System.Net.Http.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\linksrc\System.Runtime.Serialization.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\linksrc\System.ServiceModel.Internals.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\linksrc\Mono.Security.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\linksrc\System.ComponentModel.Composition.pdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\linksrc\b-opdracht.dll.mdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\bin\Debug\b-opdracht.dll.mdb
+C:\Users\lhmbe\OneDrive\Documenten\GitHub\iot\b-opdracht\b-opdracht\obj\Debug\android\assets\b-opdracht.dll.mdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\b-opdracht.csprojAssemblyReference.cache
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\b-opdracht.csproj.CoreCompileInputs.cache
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\bin\Debug\b-opdracht.dll
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\bin\Debug\b-opdracht.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\bin\Debug\b_opdracht.b_opdracht.apk
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\bin\Debug\b_opdracht.b_opdracht-Signed.apk
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\b-opdracht.dll
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\b-opdracht.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\android\bin\b_opdracht.b_opdracht.apk
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\res\layout\main.xml
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\res\values\strings.xml
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\R.cs.flag
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\R.txt
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\uploadflags.txt
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\bin\Debug\Mono.Android.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\bin\Debug\mscorlib.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\bin\Debug\System.Core.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\bin\Debug\System.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\bin\Debug\System.Xml.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\bin\Debug\System.ComponentModel.Composition.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\bin\Debug\System.Net.Http.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\bin\Debug\System.Runtime.Serialization.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\bin\Debug\System.ServiceModel.Internals.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\bin\Debug\Mono.Security.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\linksrc\Mono.Android.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\linksrc\mscorlib.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\linksrc\System.Core.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\linksrc\System.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\linksrc\System.Xml.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\linksrc\System.ComponentModel.Composition.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\linksrc\System.Net.Http.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\linksrc\System.Runtime.Serialization.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\linksrc\System.ServiceModel.Internals.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\linksrc\Mono.Security.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\linksrc\b-opdracht.dll.mdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\bin\Debug\b-opdracht.dll.mdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\android\assets\b-opdracht.dll.mdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\android\assets\Mono.Android.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\android\assets\Mono.Security.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\android\assets\mscorlib.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\android\assets\System.ComponentModel.Composition.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\android\assets\System.Core.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\android\assets\System.Net.Http.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\android\assets\System.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\android\assets\System.Runtime.Serialization.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\android\assets\System.ServiceModel.Internals.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\android\assets\System.Xml.pdb
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\res\menu\menu.xml
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\bin\Debug\b-opdracht.dll
+C:\Users\Fam. de Boer\source\repos\b-opdracht\b-opdracht\obj\Debug\linksrc\b-opdracht.dll.mdb

@@ -1,0 +1,93 @@
+﻿@using WebMatrix.Data;
+@{
+    //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Todo.mdf;Integrated Security=True";
+    //string provider = "System.Data.SqlClient";
+    //Database db = Database.OpenConnectionString(connectionString, provider);
+    Database db = Database.Open("TodoDbCntStrng");
+
+    //var usertype = Session["type"];
+    //int userID = Convert.ToInt32(Session["id"]);
+
+    //string error = "";
+    //if (usertype == "user")
+    //{
+    //db.Query($"SELECT * FROM bridelist WHERE Id ='{userID}'");
+
+    //}
+    //else
+    //{
+    //    error = "Onjuist gebruikerstype";
+    //}
+
+    int userID = -1;
+    if (Session["id"] != null)
+    {
+        userID = Convert.ToInt32(Session["id"]);
+    }
+
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+@RenderPage("head.cshtml")
+</head>
+<body>
+    <header>
+@RenderPage("menu.cshtml")
+    </header>
+    <main>
+
+        @{
+            string Actiontype = "";
+            Actiontype = Request.QueryString["type"];
+            if (Actiontype == "bestel")
+            {
+
+                if (IsPost)
+                {
+                    //int userID = Convert.ToInt32(Session["id"]);
+                    //int userID = 2;
+
+                    int rij = Convert.ToInt16(Request.Form["rij"]);
+
+                    var brideCoCommand = "SELECT brideId FROM userlist WHERE Id =@0";
+                    var Bruidspaar = db.QueryValue(brideCoCommand, userID);
+                    int brideID = Convert.ToInt32(Bruidspaar);
+
+                    //var countrij = db.Query("SELECT COUNT(Id) FROM wishlist WHERE Id ='{rij}'");
+                    var coCommand = "SELECT COUNT(Id) FROM wishlist WHERE Id =@0 AND UserId =@1";
+                    var countrij = db.Query(coCommand, rij, brideID);
+
+                    if (countrij != null)
+                    {
+
+
+
+                        //int prioriteit = Convert.ToInt16(Request.Form["prioriteit"]);
+
+                        //var updateCommand = "UPDATE wishlist SET priority=@0 WHERE Id=@1";
+                        //db.Execute(updateCommand, prioriteit, rij);
+
+                        var updateCommand = "UPDATE wishlist SET besteller=@0 WHERE Id=@1";
+                        db.Execute(updateCommand, userID, rij);
+                        <p>item besteld @userID  @rij</p>
+                    
+
+
+
+                    }
+                    else
+                    {
+                    <p class="error">item bestaat niet</p>
+                    }
+
+                }
+            }
+        }
+
+    </main>
+    <footer>
+        hebberige bruidsparen &COPY; Wiebe de Boer (boer1547, 462918)
+    </footer>
+</body>
+</html>

@@ -1,0 +1,105 @@
+﻿@using WebMatrix.Data;
+@{
+    //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Todo.mdf;Integrated Security=True";
+    //string provider = "System.Data.SqlClient";
+    //Database db = Database.OpenConnectionString(connectionString, provider);
+    Database db = Database.Open("TodoDbCntStrng");
+
+    int userID = -1;
+    if (Session["id"] != null)
+    {
+        userID = Convert.ToInt32(Session["id"]);
+    }
+
+
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    @RenderPage("head.cshtml")
+</head>
+<body>
+    <header>
+        Welkom bij hebberige bruidsparen.
+    </header>
+    <main>
+        @{
+            string Usertype = "";
+            Usertype = Request.QueryString["type"];
+
+            if (Usertype == "bride")
+            {
+                //int userID = Convert.ToInt32(Session["id"]);
+                //int userID = 2;
+                //var unik = db.Query("SELECT unikey FROM bridelist WHERE Id ={userID}");
+
+                var uniCommand = "SELECT unikey FROM bridelist WHERE Id=@0";
+                var unik = db.QueryValue(uniCommand, userID);
+
+                <p>Uw id is: @userID</p>
+
+                <p>Uw unieke code is: @unik</p>
+                //<p>Uw unieke code is: @uniCommand</p>
+                <p>ga door naar <a href="overzicht.cshtml">overzicht</a></p>
+            }
+            else if (Usertype == "user")
+            {
+                //int userID = Convert.ToInt16(Session["id"]);
+                //int userID = 2;
+                //var brideID = db.Query("SELECT brideID FROM userlist WHERE Id ={userID}");
+                var brideCommand = "SELECT brideId FROM userlist WHERE Id=@0";
+                var brideID = db.QueryValue(brideCommand, userID);
+                int bride = Convert.ToInt32(brideID);
+
+                //if (brideID !=null)
+                if (bride >= 1)
+                {
+                    <p>ga door naar <a href="lijstje.cshtml">bestellijstje</a></p>
+                }
+                //update naar bruidspaar
+                else
+                {
+                    if (IsPost)
+                    {
+                        string email = Request.Form["email"];
+                        string unikey = Request.Form["uniek"];
+                        var checkBride = db.QueryValue("SELECT COUNT(email), COUNT(unikey) FROM bridelist WHERE email='{email}' AND unikey='{unikey}'");
+                        if (checkBride != null)
+                        {
+                            //int BrideID = Convert.ToInt16(db.QueryValue($"SELECT Id FROM bridelist WHERE email='{email}' AND unikey='{unikey}'"));
+                            var BrideCommand = "SELECT Id FROM bridelist WHERE email=@0 AND unikey=@1";
+                            int BrideID = Convert.ToInt32(db.QueryValue(BrideCommand, email, unikey));
+                            //"UPDATE wishlist SET priority=@0 WHERE Id=@1"
+                            var updateCommand = "UPDATE userlist SET bridemail=@0, unikey=@1, brideId=@2 WHERE Id=@3";
+                            db.Execute(updateCommand, email, unikey, BrideID, userID);
+                            <p><a href="account.cshtml?type=user">return to account</a></p>
+                        }
+                        else
+                        {
+                            <p>ongeldige code of email</p>
+                        }
+                    }
+                    else
+                    {
+                        <div>
+                            <h2>unieke code</h2>
+                            <p>voeg de unieke code toe die je hebt gekregen van het bruidspaar</p>
+                            <form action="account.cshtml?type=user" method="post" class="form-control-plaintext">
+                                <br>Bruid E-mail: <input type="text" name="email" class="form-control" placeholder="youremail@gmail.com">
+                                <br>Bruid Unieke code: <input type="text" name="uniek" class="form-control" placeholder="unieke code">
+                                <br><input type="submit" value="voeg toe" class="btn">
+                            </form>
+                        </div>
+                    }
+                }
+
+            }
+            else
+            { <p>ongeldig gebruikeerstype</p>}
+        }
+    </main>
+    <footer>
+        hebberige bruidsparen &COPY; Wiebe de Boer (boer1547, 462918)
+    </footer>
+</body>
+</html>

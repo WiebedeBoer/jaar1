@@ -1,0 +1,30 @@
+opdracht 1 (week 2)
+Attached Files:
+
+    File analyseteksten(1).docx (13.326 KB) 
+
+de opdracht van week 2 is het maken van een tekstanalyse voor elk van de 4 teksten (1, 2, 3a en 3b).
+
+
+
+opdracht 2 (week 3)
+
+De opdracht voor week 3 is het maken van een klassediagram van bij de teksten 1, 2 en 3a  (3b niet), (zie opdracht 1 week 2) 
+
+
+
+
+opdracht 3 (week 4)
+
+De opdracht voor week 4 is het vertalen van de klassediagrammen van opdracht 2 (week 3) naar tabellen. 
+
+Het resultaat is een relationeel database schema.
+
+
+
+
+opdracht 4 (week 5)
+
+De opdracht van week 5 is het maken van een klassediagram en het daarna vertalen naar tabellen  van de teksten 3a en 3b.
+
+Het resultaat is dus 1) een klassediagram  2) een relationeel database schema.

@@ -1,0 +1,8 @@
+Samplesocket.Activity1, Samplesocket;md5bc78a2e50999076b3f4f1bd55e2d49a6.Activity1
+Samplesocket.Activity1, Samplesocket, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5bc78a2e50999076b3f4f1bd55e2d49a6.Activity1
+Samplesocket.Activity1;md5bc78a2e50999076b3f4f1bd55e2d49a6.Activity1
+samplesocket.Activity1;md5bc78a2e50999076b3f4f1bd55e2d49a6.Activity1
+Samplesocket.MainActivity, Samplesocket;md5bc78a2e50999076b3f4f1bd55e2d49a6.MainActivity
+Samplesocket.MainActivity, Samplesocket, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5bc78a2e50999076b3f4f1bd55e2d49a6.MainActivity
+Samplesocket.MainActivity;md5bc78a2e50999076b3f4f1bd55e2d49a6.MainActivity
+samplesocket.MainActivity;md5bc78a2e50999076b3f4f1bd55e2d49a6.MainActivity

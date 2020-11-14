@@ -1,0 +1,38 @@
+﻿@using WebMatrix.Data;
+@{
+    //option 1 
+    string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Todo.mdf;Integrated Security=True";
+    string provider = "System.Data.SqlClient";
+    Database db1 = Database.OpenConnectionString(connectionString, provider);
+    var records1 = db1.Query("SELECT Id, Name FROM Todo");
+
+
+    //option 2 De betere oplossing, gebruikt de connectionstring uit Web.config. 
+    //Dit is de betere oplossing die herbruikbaarder is dan optie 1
+    //Deze oplossing werkt ook met Membership (https://docs.microsoft.com/en-us/aspnet/web-pages/overview/security/16-adding-security-and-membership)
+    Database db2 = Database.Open("TodoDbCntStrng");
+    var records2 = db2.Query("SELECT Id, Name FROM Todo");
+
+}
+
+<table>
+    @foreach (var recrod in records1)
+    {
+        <tr>
+            <td>@recrod.Id</td>
+            <td>@recrod.Name</td>
+        </tr>
+    }
+</table>
+<br/>
+<br />
+<br />
+<table>
+    @foreach (var recrod in records2)
+    {
+        <tr>
+            <td>@recrod.Id</td>
+            <td>@recrod.Name</td>
+        </tr>
+    }
+</table>

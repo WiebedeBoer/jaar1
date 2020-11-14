@@ -1,0 +1,100 @@
+﻿@using WebMatrix.Data;
+@{
+    //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Todo.mdf;Integrated Security=True";
+    //string provider = "System.Data.SqlClient";
+
+    Database db = Database.Open("TodoDbCntStrng");
+
+    //var records2 = db2.Query("SELECT Id, Name FROM Todo");
+
+    //Database db = Database.OpenConnectionString(connectionString, provider);
+
+    string usertype = "";
+    string unikey = "";
+
+    string error = "";
+    if (IsPost)
+    {
+        string email = Request.Form["email"];
+        string password = Request.Form["password"];
+        usertype = Request.Form["user"];
+
+        if (usertype == "user")
+        {
+            int brideID = 0;
+            //db.Execute($"INSERT INTO userlist (email, password) VALUES (email,password)");
+            var insertCommand = "INSERT INTO userlist (email, password, brideId) VALUES(@0, @1, @2)";
+            db.Execute(insertCommand, email, password, brideID);
+
+            error = "none";
+        }
+        else if (usertype == "bride")
+        {
+            string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            Random rnd = new Random();
+
+            int rna = rnd.Next(1, 61);
+            string rca = chars.Substring(rna,1);
+
+            int rnb = rnd.Next(1, 61);
+            string rcb = chars.Substring(rnb, 1);
+
+            int rnc = rnd.Next(1, 61);
+            string rcc = chars.Substring(rnc, 1);
+
+            int rne = rnd.Next(1, 61);
+            string rce = chars.Substring(rne, 1);
+
+            int rnf = rnd.Next(1, 61);
+            string rcf = chars.Substring(rnf, 1);
+
+            int rng = rnd.Next(1, 61);
+            string rcg = chars.Substring(rng, 1);
+
+            unikey = rca + rcb + rcc + rce + rcf + rcg;
+            //db.Execute($"INSERT INTO bridelist (email, password, unikey) VALUES (email,password,unikey)");
+
+            var insertCommand = "INSERT INTO bridelist (email, password, unikey) VALUES(@0, @1, @2)";
+            db.Execute(insertCommand, email, password, unikey);
+            error = "none";
+        }
+        else
+        {
+            error = "Onjuiste gegevens ingevuld";
+        }
+
+    }
+
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>trouwlijstje</title>
+    <link rel="stylesheet" type="text/css" href="bruidstyle.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        @{
+            if (error != "none")
+            {
+                <p class="error">onjuiste gegevens ingevuld</p>
+            }
+            else
+            {
+
+                if (usertype =="bride")
+                {
+                    <p>uw unieke key is @unikey</p>
+                }
+                <p>registratie geslaagd uw unieke key</p>
+            }
+        }
+        <p><a href="index.cshtml">home</a></p>
+    </main>
+    <footer>
+        hebberige bruidsparen &COPY; Wiebe de Boer (boer1547, 462918)
+    </footer>
+</body>
+</html>

@@ -1,0 +1,106 @@
+﻿@using WebMatrix.Data;
+@{
+    //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Todo.mdf;Integrated Security=True";
+    //string provider = "System.Data.SqlClient";
+    //Database db = Database.OpenConnectionString(connectionString, provider);
+
+    Database db = Database.Open("TodoDbCntStrng");
+
+    string error = "";
+
+    //var usertype = Session["type"];
+    //int userID = Convert.ToInt32(Session["id"]);
+    //int userID = 2;
+
+    int userID = -1;
+    if (Session["id"] != null)
+    {
+        userID = Convert.ToInt32(Session["id"]);
+    }
+
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    @RenderPage("head.cshtml")
+</head>
+<body>
+    <header>
+        @RenderPage("menu.cshtml")
+    </header>
+    <main>
+
+        <div>
+            <h2>Voeg nieuw item toe</h2>
+            <form method="post" action="wijzigen.cshtml?type=maak">
+                <input type="hidden" name="actie" value="maak" />
+                <br />Prioriteit <input type="text" name="prioriteit" placeholder="1" />
+                <br />Naam <input type="text" name="naam" placeholder="naam" />
+                <input type="submit" value="voeg toe" />
+            </form>
+        </div>
+
+
+        @{
+
+
+            //var countspul = db.Query("SELECT COUNT(Id) FROM wishlist WHERE UserId ='{userID}'");
+            //int telspul = Convert.ToInt16(countspul);
+
+            //int userID = Convert.ToInt16(Session["id"]);
+
+            var brideCommand = "SELECT COUNT(Id) FROM wishlist WHERE UserId=@0";
+            var telspul = db.QueryValue(brideCommand, userID);
+
+            if (telspul >= 1)
+            {
+
+                //var spul = db.QueryValue("SELECT Id, naam, priority, besteller FROM wishlist WHERE UserId ={userID} ORDER BY priority ASC, Id DESC");
+                //var spul = db.Query("SELECT Id, naam, priority, besteller FROM wishlist WHERE UserId ={userID} ORDER BY priority ASC, Id DESC");
+                var spulCommand = "SELECT Id, naam, priority, besteller FROM wishlist WHERE UserId =@0 ORDER BY priority ASC, Id DESC";
+                var spul = db.Query(spulCommand, userID);
+                //var spul = db.QueryValue("SELECT Id, naam, priority, besteller FROM wishlist WHERE UserId ={userID}");
+
+                <h2>Wishlist</h2>
+
+                <table>
+                    <tr><th>Item</th><th>Volgorde</th><th>Volgorde Wijzigen</th><th>Item Verwijderen</th><th>Besteller</th></tr>
+                    @foreach (var recrod in spul)
+                    {
+
+                        <tr>
+                            <td>@recrod.naam</td>
+                            <td>@recrod.priority</td>
+                            <td><form method="post" action="wijzigen.cshtml?type=prioriteit"><input type="hidden" name="actie" value="prioriteit" /><input type="hidden" value="@recrod.Id" name="rij" /><input type="text" value="@recrod.priority" name="prioriteit" /><input type="submit" value="wijzig volgorde" /></form></td>
+                            <td><form method="post" action="wijzigen.cshtml?type=verwijder"><input type="hidden" name="actie" value="verwijder" /><input type="hidden" value="@recrod.Id" name="rij" /><input type="submit" value="verwijder" /></form></td>
+                            @{
+                                if (@recrod.besteller != null && @recrod.besteller != 0)
+                                {
+                                    int bestelId = Convert.ToInt32(recrod.besteller);
+                                    //var bestellermail = db.QueryValue("SELECT email FROM userlist WHERE Id ={recrod.besteller} ORDER BY Priority ASC, Id DESC");
+                                    //var bestellermail = db.QueryValue("SELECT email FROM userlist WHERE Id ={bestelId}");
+
+                                    //int bestelId = Convert.ToInt32(recrod.besteller);
+                                    var bestellerCom = "SELECT email FROM userlist WHERE Id =@0";
+                                    var bestellermail = db.QuerySingle(bestellerCom, bestelId);
+
+                                    <td>@bestellermail.email</td>
+                                }
+                                else
+                                {
+                                    <td>nog niet besteld</td>
+                                }
+                            }
+                        </tr>
+                                }
+                </table>
+                                }
+
+        }
+
+    </main>
+    <footer>
+        hebberige bruidsparen &COPY; Wiebe de Boer (boer1547, 462918)
+    </footer>
+</body>
+</html>

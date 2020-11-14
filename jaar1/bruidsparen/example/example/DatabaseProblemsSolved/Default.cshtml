@@ -1,0 +1,22 @@
+﻿@using WebMatrix.Data;
+@{
+    //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Todo.mdf;Integrated Security=True";
+    //string provider = "System.Data.SqlClient";
+    //Database db = Database.OpenConnectionString(connectionString, provider);
+
+    Database db2 = Database.Open("TodoDbCntStrng");
+
+    var records2 = db2.Query("SELECT Id, besteller FROM wishlist");
+
+    //var records = db.Query("SELECT Id, Name FROM Todo");
+}
+
+<table>
+    @foreach (var recrod in records2)
+    {
+        <tr>
+            <td>@recrod.Id</td>
+            <td>@recrod.besteller</td>
+        </tr>
+    }
+</table>
